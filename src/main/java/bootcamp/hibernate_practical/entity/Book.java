@@ -7,12 +7,10 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Data
 public class Book {
     @Id
@@ -24,12 +22,14 @@ public class Book {
     private String genre;
     private int publicationYear;
     private boolean available;
+    private boolean borrowedStatus;
 
-    public Book(String title, String author, String genre, int publicationYear, boolean available) {
+    public Book(String title, String author, String genre, int publicationYear, boolean available, boolean borrowedStatus) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.publicationYear = publicationYear;
         this.available = available;
+        this.borrowedStatus = borrowedStatus;
     }
 }
