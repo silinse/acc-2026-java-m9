@@ -19,3 +19,7 @@ Complete all of the 'TODO' portions of the code. The finished application should
 - Custom exception handling
 - Searching by partial title
 - Add 'borrow' and 'return' endpoints along with the new 'borrowedStatus' field to the Book entity
+
+## Configuration
+- The application runs without an OpenWeather API key
+- To test the `GET /api/weather/{city}` endpoint add `OPENWEATHER_API_KEY` environment variable with a valid key for openweathermap.org

@@ -42,4 +42,15 @@ public class GlobalExceptionHandler {
 
         return body;
     }
+
+
+    @ResponseStatus(HttpStatus.BAD_GATEWAY)
+    @ExceptionHandler(WeatherClientException.class)
+    public Map<String, Object> handleWeatherClientException(WeatherClientException e) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("status", 502);
+        body.put("message", e.getMessage());
+
+        return body;
+    }
 }
